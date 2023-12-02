@@ -19,7 +19,7 @@
   "homepage": "https://github.com/ManuelFBS/CRUD-Express-Mongo#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^7.1.2",
+    "express-handlebars": "^5.3.2",
     "mongoose": "^8.0.2",
     "morgan": "^1.10.0"
   },
