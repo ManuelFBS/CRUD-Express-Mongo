@@ -1,4 +1,5 @@
 import express from 'express';
+import './config/database.js';
 import exphbs from 'express-handlebars';
 import router from './routes/index.routes.js';
 import path from 'path';
