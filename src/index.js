@@ -3,6 +3,7 @@ import './config/database.js';
 import exphbs from 'express-handlebars';
 import router from './routes/index.routes.js';
 import path from 'path';
+import morgan from 'morgan';
 
 const app = express();
 
@@ -20,6 +21,9 @@ app.engine(
 );
 
 app.set('view engine', '.hbs');
+
+// Middlewares --------------------------------------------------------------------------------------------
+app.use(morgan('dev'));
 
 // Routes -----------------------------------------------------------------------------------------------------
 app.use('/', router);
