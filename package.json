@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ManuelFBS/CRUD-Express-Mongo#readme",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-handlebars": "^5.3.2",
     "mongoose": "^8.0.2",
