@@ -1,5 +1,6 @@
 import { connect } from 'mongoose';
 
-(() => {
-  console.log('Testing "src/config/database.js..."');
+(async () => {
+  const db = await connect('mongodb://localhost/crud-mongo');
+  console.log('DB connected to:', db.connection.name);
 })();
