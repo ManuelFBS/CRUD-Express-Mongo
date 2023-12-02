@@ -1,3 +1,19 @@
-<h1>Hello World !!!</h1>
+{{! <h1>Hello World !!!</h1>
 
-<p>Este es un párrafo de prueba para el CRUD Express Mongo...</p>
+<p>Este es un párrafo de prueba para el CRUD Express Mongo...</p> }}
+<form action='/task/add' method='POST'>
+
+  <div>
+    <label for='title'>Write a title:</label>
+    <input type='text' name='title' placeholder='Title' id='title' />
+  </div>
+
+  <div>
+    <label for='description'>Description:</label>
+    <textarea name='description' placeholder='Description' id='description'>
+    </textarea>
+  </div>
+
+  <button>Add</button>
+
+</form>
