@@ -23,5 +23,12 @@
     "express-handlebars": "^7.1.2",
     "mongoose": "^8.0.2",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.5",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.5",
+    "nodemon": "^3.0.2"
   }
 }
