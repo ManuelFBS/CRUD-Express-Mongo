@@ -7,10 +7,11 @@ router.get('/', (req, res) => {
   res.render('index');
 });
 
-router.post('/task/add', (req, res) => {
+router.post('/task/add', async (req, res) => {
   const task = Task(req.body);
+  const taskSaved = await task.save();
 
-  console.log(task);
+  console.log(taskSaved);
 
   res.send('Saved...');
 });
