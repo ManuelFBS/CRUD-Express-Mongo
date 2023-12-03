@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Task from '../models/Task';
+// import Task from '../models/Task';
 import { routerTasks } from './tasks/tasksRoutes';
 
 const router = Router();
@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 //   res.redirect('/');
 // });
 
-router.post(`${prefix}/add`, routerTasks);
+router.post(`${prefix}`, routerTasks);
 
 router.get('/about', (req, res) => {
   res.render('about');
