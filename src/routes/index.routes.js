@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import Task from '../models/Task';
 
 const router = Router();
 
@@ -7,7 +8,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/task/add', (req, res) => {
-  console.log(req.body);
+  const task = Task(req.body);
+
+  console.log(task);
 
   res.send('Saved...');
 });
