@@ -9,11 +9,10 @@ router.get('/', (req, res) => {
 
 router.post('/task/add', async (req, res) => {
   const task = Task(req.body);
-  const taskSaved = await task.save();
 
-  console.log(taskSaved);
+  await task.save();
 
-  res.send('Saved...');
+  res.redirect('/');
 });
 
 router.get('/about', (req, res) => {
