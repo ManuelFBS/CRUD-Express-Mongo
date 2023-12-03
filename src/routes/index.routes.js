@@ -4,7 +4,7 @@ import Task from '../models/Task';
 
 const router = Router();
 
-const prefix = '/task';
+// const prefix = '/task';
 
 router.get('/', (req, res) => {
   res.render('index');
