@@ -9,6 +9,8 @@ export const postTaskHandler = async (req, res) => {
       message: 'La tarea ha sido registrada exitosamente...!!!',
       data: newTask
     });
+
+    res.redirect('/');
   } catch (error) {
     throw error;
   }
