@@ -3,8 +3,12 @@ import Task from '../models/Task';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.render('index');
+router.get('/', async (req, res) => {
+  const tasks = await Task.find().lean();
+
+  console.log(tasks);
+
+  res.render('index', { tasks: tasks });
 });
 
 router.post('/task/add', async (req, res) => {
