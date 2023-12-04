@@ -1,27 +1,2 @@
-{{! <h1>Hello World !!!</h1>
-
-<p>Este es un párrafo de prueba para el CRUD Express Mongo...</p> }}
-<form action='/task/add' method='POST'>
-
-  <div>
-    <label for='title'>Write a title:</label>
-    <input type='text' name='title' placeholder='Title' id='title' />
-  </div>
-
-  <div>
-    <label for='description'>Description:</label>
-    <textarea name='description' placeholder='Description' id='description'></textarea>
-  </div>
-
-  <button>Add</button>
-
-</form>
-
-<ul class='tasks_list'>
-  {{#each tasks}}
-    <li>{{title}}</li>
-    <p>{{description}}</p>
-    <button>Edit</button>
-    <button>Delete</button>
-  {{/each}}
-</ul>
+{{> tasks/form }}
+{{> tasks/table }}
