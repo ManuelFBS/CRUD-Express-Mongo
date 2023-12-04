@@ -4,11 +4,17 @@ import Task from '../models/Task';
 const router = Router();
 
 router.get('/', async (req, res) => {
-  const tasks = await Task.find().lean();
+  try {
+    const tasks = await Task.find().lean();
+    const tasksWithIncrementedIndex = tasks.map((task, index) => {
+      return { ...task, displayIndex: index + 1 };
+    });
 
-  console.log(tasks);
-
-  res.render('index', { tasks: tasks });
+    // res.render('index', { tasks: tasks });
+    res.render('index', { tasks: tasksWithIncrementedIndex });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 router.post('/task/add', async (req, res) => {

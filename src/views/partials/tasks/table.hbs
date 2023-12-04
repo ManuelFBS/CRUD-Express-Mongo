@@ -1,8 +1,26 @@
-<ul class='tasks_list'>
-  {{#each tasks}}
-    <li>{{title}}</li>
-    <p>{{description}}</p>
-    <button>Edit</button>
-    <button>Delete</button>
-  {{/each}}
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>N.</th>
+      <th>Task</th>
+      <th>Description</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each tasks}}
+      <tr>
+        {{!-- <td>{{@index}}</td> --}}
+        <td>{{displayIndex}}</td>
+        <td>{{title}}</td>
+        <td>{{description}}</td>
+        <td>
+          <button>Done</button>
+          <button>Edit</button>
+          <button>Delete</button>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
