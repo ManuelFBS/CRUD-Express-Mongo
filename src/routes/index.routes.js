@@ -30,14 +30,16 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
-router.get('/edit', (req, res) => {
-  res.render('edit');
+router.get('/edit/:id', async (req, res) => {
+  const task = await Task.findById(req.params.id).lean();
+
+  res.render('edit', { task });
 });
 
-router.post('/edit', (req, res) => {
+router.post('/edit/:id', (req, res) => {
   console.log(req.body);
 
-  res.render('received');
+  res.send('received');
 });
 
 export default router;
