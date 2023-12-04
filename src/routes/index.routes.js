@@ -36,11 +36,13 @@ router.get('/edit/:id', async (req, res) => {
   res.render('edit', { task });
 });
 
-router.post('/edit/:id', (req, res) => {
-  console.log(req.body);
-  console.log(req.params.id);
+router.post('/edit/:id', async (req, res) => {
+  const { id } = req.params;
+  const taskUpdated = req.body;
 
-  res.send('received');
+  await Task.findByIdAndUpdate(id, taskUpdated);
+
+  res.redirect('/');
 });
 
 export default router;
