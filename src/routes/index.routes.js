@@ -45,4 +45,12 @@ router.post('/edit/:id', async (req, res) => {
   res.redirect('/');
 });
 
+router.delete('/del/:id', async (req, res) => {
+  const { id } = req.params;
+
+  await Task.findByIdAndDelete(id);
+
+  res.redirect('/');
+});
+
 export default router;
