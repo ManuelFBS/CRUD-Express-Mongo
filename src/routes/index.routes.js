@@ -6,6 +6,7 @@ const router = Router();
 router.get('/', async (req, res) => {
   try {
     const tasks = await Task.find().lean();
+    // Con esta función, se le agrega +1 al index...
     const tasksWithIncrementedIndex = tasks.map((task, index) => {
       return { ...task, displayIndex: index + 1 };
     });
