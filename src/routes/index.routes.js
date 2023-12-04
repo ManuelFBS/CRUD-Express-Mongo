@@ -38,6 +38,7 @@ router.get('/edit/:id', async (req, res) => {
 
 router.post('/edit/:id', (req, res) => {
   console.log(req.body);
+  console.log(req.params.id);
 
   res.send('received');
 });
