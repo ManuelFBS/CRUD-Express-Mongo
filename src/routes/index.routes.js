@@ -34,4 +34,10 @@ router.get('/edit', (req, res) => {
   res.render('edit');
 });
 
+router.post('/edit', (req, res) => {
+  console.log(req.body);
+
+  res.render('received');
+});
+
 export default router;
