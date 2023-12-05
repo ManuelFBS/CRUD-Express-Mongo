@@ -29,7 +29,7 @@ router.post('/task/add', async (req, res) => {
 router.get('/about', (req, res) => {
   res.render('about');
 });
-
+//
 router.get('/edit/:id', async (req, res) => {
   const task = await Task.findById(req.params.id).lean();
 
@@ -43,6 +43,12 @@ router.post('/edit/:id', async (req, res) => {
   await Task.findByIdAndUpdate(id, taskUpdated);
 
   res.redirect('/');
+});
+//
+router.get('/del/:id', async (req, res) => {
+  const task = await Task.findById(req.params.id).lean();
+
+  res.render('delete', { task });
 });
 
 router.delete('/del/:id', async (req, res) => {
