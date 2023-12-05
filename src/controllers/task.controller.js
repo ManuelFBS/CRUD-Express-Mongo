@@ -36,3 +36,12 @@ export const renderTaskEdit = async (req, res) => {
     console.log(error);
   }
 };
+
+export const editTask = async (req, res) => {
+  const { id } = req.params;
+  const taskUpdated = req.body;
+
+  await Task.findByIdAndUpdate(id, taskUpdated);
+
+  res.redirect('/');
+};
