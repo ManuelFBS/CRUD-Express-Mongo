@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import Task from '../models/Task';
-import { renderTasks, createTask, about, renderTaskEdit, editTask } from '../controllers/task.controller.js';
+import { renderTasks, createTask, about, renderTaskEdit, editTask, deleteTask } from '../controllers/task.controller.js';
 
 const router = Router();
 
@@ -14,13 +14,7 @@ router.get('/edit/:id', renderTaskEdit);
 
 router.post('/edit/:id', editTask);
 
-router.get('/del/:id', async (req, res) => {
-  const { id } = req.params;
-
-  await Task.findByIdAndDelete(id);
-
-  res.redirect('/');
-});
+router.get('/del/:id', deleteTask);
 
 router.get('/toggleDone/:id', async (req, res) => {
   const { id } = req.params;
