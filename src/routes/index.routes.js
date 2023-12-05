@@ -1,18 +1,12 @@
 import { Router } from 'express';
 import Task from '../models/Task';
-import { renderTasks } from '../controllers/task.controller.js';
+import { renderTasks, createTask } from '../controllers/task.controller.js';
 
 const router = Router();
 
 router.get('/', renderTasks);
 
-router.post('/task/add', async (req, res) => {
-  const task = Task(req.body);
-
-  await task.save();
-
-  res.redirect('/');
-});
+router.post('/task/add', createTask);
 
 router.get('/about', (req, res) => {
   res.render('about');
