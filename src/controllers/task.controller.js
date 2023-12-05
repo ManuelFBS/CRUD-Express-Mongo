@@ -22,3 +22,7 @@ export const createTask = async (req, res) => {
 
   res.redirect('/');
 };
+
+export const about = (req, res) => {
+  res.render('about');
+};
