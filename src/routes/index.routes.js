@@ -44,14 +44,8 @@ router.post('/edit/:id', async (req, res) => {
 
   res.redirect('/');
 });
-//
+
 router.get('/del/:id', async (req, res) => {
-  const task = await Task.findById(req.params.id).lean();
-
-  res.render('delete', { task });
-});
-
-router.delete('/del/:id', async (req, res) => {
   const { id } = req.params;
 
   await Task.findByIdAndDelete(id);
