@@ -45,3 +45,11 @@ export const editTask = async (req, res) => {
 
   res.redirect('/');
 };
+
+export const deleteTask = async (req, res) => {
+  const { id } = req.params;
+
+  await Task.findByIdAndDelete(id);
+
+  res.redirect('/');
+};
