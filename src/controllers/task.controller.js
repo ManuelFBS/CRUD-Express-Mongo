@@ -26,3 +26,13 @@ export const createTask = async (req, res) => {
 export const about = (req, res) => {
   res.render('about');
 };
+
+export const renderTaskEdit = async (req, res) => {
+  try {
+    const task = await Task.findById(req.params.id).lean();
+
+    res.render('edit', { task });
+  } catch (error) {
+    console.log(error);
+  }
+};

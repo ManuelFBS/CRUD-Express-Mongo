@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import Task from '../models/Task';
-import { renderTasks, createTask, about } from '../controllers/task.controller.js';
+import { renderTasks, createTask, about, renderTaskEdit } from '../controllers/task.controller.js';
 
 const router = Router();
 
@@ -10,11 +10,7 @@ router.post('/task/add', createTask);
 
 router.get('/about', about);
 //
-router.get('/edit/:id', async (req, res) => {
-  const task = await Task.findById(req.params.id).lean();
-
-  res.render('edit', { task });
-});
+router.get('/edit/:id', renderTaskEdit);
 
 router.post('/edit/:id', async (req, res) => {
   const { id } = req.params;
