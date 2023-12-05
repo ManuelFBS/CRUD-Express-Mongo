@@ -1,22 +1,10 @@
 import { Router } from 'express';
 import Task from '../models/Task';
+import { renderTasks } from '../controllers/task.controller.js';
 
 const router = Router();
 
-router.get('/', async (req, res) => {
-  try {
-    const tasks = await Task.find().lean();
-    // Con esta función, se le agrega +1 al index...
-    const tasksWithIncrementedIndex = tasks.map((task, index) => {
-      return { ...task, displayIndex: index + 1 };
-    });
-
-    // res.render('index', { tasks: tasks });
-    res.render('index', { tasks: tasksWithIncrementedIndex });
-  } catch (error) {
-    console.log(error);
-  }
-});
+router.get('/', renderTasks);
 
 router.post('/task/add', async (req, res) => {
   const task = Task(req.body);

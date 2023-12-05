@@ -1,3 +1,5 @@
+import Task from '../models/Task';
+
 export const renderTasks = async (req, res) => {
   try {
     const tasks = await Task.find().lean();
