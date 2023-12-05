@@ -14,3 +14,11 @@ export const renderTasks = async (req, res) => {
     console.log(error);
   }
 };
+
+export const createTask = async (req, res) => {
+  const task = Task(req.body);
+
+  await task.save();
+
+  res.redirect('/');
+};
