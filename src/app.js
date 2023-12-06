@@ -24,13 +24,14 @@ app.set('view engine', '.hbs');
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 
+// Static files ----------------------------------------------------------------------------------------------
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Routes -----------------------------------------------------------------------------------------------------
 app.use('/', router);
+// -404-
 app.use('*', (req, res) => {
   res.status(404).json({
     message: '404 - Not found...'
   });
 });
-
-// Static files ----------------------------------------------------------------------------------------------
-app.use(express.static(path.join(__dirname, 'public')));
