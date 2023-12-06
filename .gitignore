@@ -4,5 +4,5 @@
 # Enviropment variables...
 .env
 
-# build folder
+# Build folder
 /dist
