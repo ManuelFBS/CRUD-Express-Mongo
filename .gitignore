@@ -7,5 +7,5 @@ node_modules
 # Build folder
 dist
 
-#
+##
 vercel.json
