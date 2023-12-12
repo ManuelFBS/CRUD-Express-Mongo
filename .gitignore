@@ -4,5 +4,8 @@ node_modules
 # Enviropment variables...
 .env
 
-# Build folder
+# Build folder...
 dist
+
+# Deploy...
+vercel.json
