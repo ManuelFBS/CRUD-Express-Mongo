@@ -9,7 +9,3 @@ dist
 
 # Deploy...
 vercel.json
-.vercel
-
-# Database conn...
-playground-1.mongodb.js
