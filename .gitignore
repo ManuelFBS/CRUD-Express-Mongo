@@ -6,7 +6,3 @@ node_modules
 
 # Build folder...
 dist
-
-# Deploy...
-vercel.json
-hop.yml
