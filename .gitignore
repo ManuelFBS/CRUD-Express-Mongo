@@ -9,3 +9,4 @@ dist
 
 # Deploy...
 vercel.json
+hop.yml
